@@ -21,6 +21,7 @@ export const SocketContextProvider = ({children}) => {
                 },
             });
             setSocket(socket);
+            // https://chat-app-n.onrender.com
 
             socket.on("getOnlineUsers" , (users) => {
                 setOnlineUsers(users);

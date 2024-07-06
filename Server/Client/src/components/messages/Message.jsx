@@ -1,6 +1,7 @@
 import { useAuthContext } from "../../context/AuthContext"
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
+import {BsCheck2All} from "react-icons/bs"
 
 const Message = ({message}) => {
 
@@ -18,8 +19,8 @@ const Message = ({message}) => {
                   <img src={profilePic} alt="tailwind css chat bubble component"/>
             </div>
         </div>
-        <div className={`chat-bubble text-white ${bubbleBgColor}`} >{message.message}</div>
-        <div className="chat-footer opacity-50 text-xs flex gap-1 items-center" >{extractTime(message.createdAt)}</div>
+      <div className={`chat-bubble text-white  ${bubbleBgColor}`} >{message.message}</div>
+      <div className="chat-footer opacity-50 text-xs flex gap-1 items-center" >{extractTime(message.createdAt)} {fromMe ? <BsCheck2All className={`text-lg ${message.seen ? "text-blue-400" : "text-white"}`} /> : ''}</div>
     </div>
   )
 }
